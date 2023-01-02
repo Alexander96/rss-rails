@@ -8,6 +8,7 @@ gem "rails", "~> 7.0.4"
 
 gem "slim-rails"
 gem "jsbundling-rails"
+gem "cssbundling-rails"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
