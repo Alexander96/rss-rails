@@ -11,7 +11,6 @@ function ArticlesList() {
   }
 
   useEffect(() => {
-    // hit server and get articles
     const apiEndpoint = `/api/articles?search_term=${searchTerm}`
 
     fetch(apiEndpoint)
@@ -59,17 +58,17 @@ function ArticlesList() {
                 </thead>
                 <tbody>
                   {loadedArticles.map((article, index) =>{ return (
-                  <tr key={index} className="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      {article.Title}
-                    </td>
-                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      {article.PublishDate}
-                    </td>
-                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      {article.Feed}
-                    </td>
-                  </tr>
+                    <tr key={index} className="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                      <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                        <a href={article.Link} target="_blank">{article.Title}</a>
+                      </td>
+                      <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                        {article.PublishDate}
+                      </td>
+                      <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                        {article.Feed}
+                      </td>
+                    </tr>
                   )})}
                 </tbody>
               </table>
