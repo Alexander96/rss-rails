@@ -26,8 +26,6 @@ class RssService < ApplicationService
 
       response = http.request request
 
-      puts response
-      puts response.body
       @token = response.header["token"]
     end
   end

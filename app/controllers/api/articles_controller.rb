@@ -2,7 +2,6 @@ module Api
 	class ArticlesController < ApplicationController
 
 		def index
-			puts params["search_term"]
 			@articles = RssService.call()["Items"]
 			@articles = filter_by(params["search_term"])
 
